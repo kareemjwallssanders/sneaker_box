@@ -1,0 +1,310 @@
+/* Project Name: Blank Template
+Client: Your Client
+Author: Lilly Percival
+Developer @RC in Boston
+Date (started):
+Date (completed):
+*/
+
+
+/*******************************************/
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+ 
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right;
+	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left;
+	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/*******************************************/
+/* BASE STYLES
+/*******************************************/
+*{
+padding: 0;
+margin: 0;
+font-family: sans-serif;
+
+}
+
+body {
+     background-color: #000;
+     background-image: url("../images/mainimg.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     opacity: 30%;
+     color: #000;
+     font-size: 10px;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+     
+}
+
+
+/*******************************************/
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+#container {
+	width: 960px;
+	margin: auto;
+}
+
+.container{
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+
+.container span{
+
+  display: block;
+}
+
+li{
+  list-style: none;
+  
+}
+
+
+.text1{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  margin-bottom: 20px;
+  background: black;
+  position: relative;
+  animation: text 3s 1;
+}
+
+
+.text2{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.red:hover{
+  color: red;
+  width: 100%;
+}
+
+.blue:hover{
+  color: blue;
+  width: 100%;
+}
+.green:hover{
+  color: green;
+  width: 100%;
+}
+.text1 > span{
+  display: inline;
+}
+@keyframes text {
+  0%{
+    color: black;
+    margin-bottom: -40px;
+  }
+60%{
+  letter-spacing: 0.2rem;
+  margin-bottom: -40px;
+}
+}
+
+.khfInfo{
+  border: 3px solid black;
+  background-color: #222222;
+  height: auto;
+  width: 16%;
+  position: absolute;
+  top: 60%;
+  left: 42%;
+  animation: fade 3s 1;
+}
+
+p{
+  color: white;
+  opacity: 1;
+  font-weight: 600;
+  width: auto;
+  font-size: 1rem;
+  text-align: center;
+
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  60%{
+    opacity: 0;
+  }
+}
+p > span{
+  font-weight: bold;
+  color: red;
+}
+
+
+/*******************************************/
+/* ADDITIONAL STYLES
+/*******************************************/
+.container{
+
+  width: 100%;
+  height: 900px;
+  border: 2px solid black; 
+
+}
+
+
+
+div{
+  width: 50%;
+  height: 900px;
+  border: 2px solid black; 
+  float: left;
+}
+
+.homeHeader{
+  background-image: url('/public/images/uploads/images.png');
+  
+  text-align: center;
+  color: black;
+  width: 50%;
+  float: left;
+  padding-top: 25%;
+  font-size: 50px;
+}
+.logininputs{
+  text-align: center;
+  padding-top: 40%;
+}
+
+
+a{
+  text-decoration: none;
+  font-size: 40px;
+
+} */
+
+/* =========================================================== */
+
+/* .proHeader{
+  width: 100%;
+  height: 100px;
+  border: 2px solid black;
+  text-align: center;
+  clear: both;
+  font-size: 30px;
+} */
+
+/* .usersBox{
+  height: 800px;
+  width: 50%;
+  border: 2px solid black;
+  float: left;
+} */
+ 
+/* .rankingBox{
+  height: 800px;
+  width: 50%;
+  border: 2px solid red;
+  float: left;
+} */
+
+/* .avatar{
+  width: 100%;
+  height: 300px;
+  border: 2px solid blue;
+} */
+
+/* .rankingBox li{
+  line-height: 75px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+CSS
+
+/*******************************************/
+/* MEDIA QUERIES
+/*******************************************/
+
+
+  /* ##Device = Desktops */
+  /* ##Screen = 1281px to higher resolution desktops */
+
+/* @media (min-width: 1281px) {
+
+} 
+
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+} 
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+}

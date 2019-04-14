@@ -1,0 +1,22 @@
+
+
+h1{
+    font-size: 60px;
+    text-align: center;
+    background-image: url('/public/images/main.jpg');
+    margin:0;
+    padding:0;
+    height: 200px;
+
+}
+
+
+
+
+
+img{
+    height:100px;
+    width:100px;
+}
+
+

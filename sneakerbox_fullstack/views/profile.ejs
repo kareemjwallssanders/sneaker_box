@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SnEaKer BoX</title>
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" >
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <header class="proHeader">
+    <h1>SnEaker BoX</h1>
+    <h3 class="promainH3">Upload a pic of you favorite food & write a review</h3>
+  </header>
+
+  <section class="usersBox">
+    <section class="avatar">
+      <span><%= user.local.name %></span>
+      <img src="<%= user.local.avatar %>" alt="item-picture">
+      <div class="form-group">
+        <input id="avatar" type="file" name="avatar">
+        <input id="userId" hidden type="text" name="_id" value="<%= user._id %>">
+      </div>
+      <input id="avatarSubmit" type="submit">
+      </form>
+    </section>
+    <span>User Pic</span>
+
+  </section>
+
+  
+
+  <section class = "bottomSec">
+  <form action="/api/reviews" method="post" enctype="multipart/form-data">
+    <input hidden type="text" name="username" value="<%= user.local.name %>">
+    <input id="message" type="text" name="review" placeholder="Your Review Here">
+    <input multiple type="file" name="images">
+    <button type="submit" name="button">Submit</button>
+  </form>
+</section>
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
