@@ -25,13 +25,20 @@ var upload = multer({storage: storage})
   // after the user is redirected to their profile,
   // the user will be able to upload an image and a name
   app.get('/profile', isLoggedIn, function(req, res) {
-    db.collection('sneakerapp').find().toArray((err, reviews) => {
+    let query = {}
+    if ('brand' in req.query && req.query.brand !== "None") {
+      query['brand'] = req.query.brand
+    }
+    db.collection('sneakerapp').find(query).toArray((err, result) => {
+      // console.log(result); getting sneaker data to the terminal
+
       if (err) return console.log(err)
       res.render('profile.ejs', {
-        reviews: reviews,
+        sneakers: result,
         user: req.user
       })
     })
+    
   });
 
   
@@ -65,6 +72,24 @@ var upload = multer({storage: storage})
       res.send(result)
     })
   });  
+
+  app.get('/api/sneaker/:id',  function(req, res) {
+    const id = req.params.id;
+    console.log(id);
+
+    // figure out how to get a sneaker by id from mongo
+    // make template (ejs file) for displaying sneaker data
+    // res.render the template with the sneaker data you get
+
+    
+    // db.collection('sneakerapp').find().toArray((err, reviews) => {
+    //   if (err) return console.log(err)
+    //   res.render('profile.ejs', {
+    //     reviews: reviews,
+    //     user: req.user
+    //   })
+    // })
+  });
 
 // =============================================================================
 // login/signup ================================================================

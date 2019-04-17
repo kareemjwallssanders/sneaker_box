@@ -43,6 +43,8 @@
   #main h1{
     text-align: center;
     font-size: 3em;
+    font-family: monospace, Helvetica, Verdana, Geneva, sans-serif;
+    
   }
   /* end of main header */
   
