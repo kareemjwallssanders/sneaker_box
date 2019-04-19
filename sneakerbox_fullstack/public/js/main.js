@@ -18,6 +18,18 @@ updateAvatar.addEventListener('click', () => {
     })
 })
 
+document.getElementById('delete').addEventListener('click', ()=>{
+  fetch('/api/deletesneaker', {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({"name": document.getElementById('delete').value + ""})
+    }).then(function(res,req){
+        window.location.reload()
+    })
+})
+
 document.getElementById('userInput').addEventListener('click', ()=>{
     
     //value that they put in for the select 
@@ -130,11 +142,6 @@ document.getElementById('close-btn').addEventListener('click', function(){
         });
       });
     });
-    
-    
-
-
-
 });
 
 ////users profile stage===============================================////

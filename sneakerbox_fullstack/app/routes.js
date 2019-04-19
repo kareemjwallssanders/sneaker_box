@@ -31,12 +31,29 @@ module.exports = function (app, passport, db, multer, ObjectId) {
     db.collection('sneakerapp')
       .find(query)
       .toArray((err, result) => {
-        // console.log(result); getting sneaker data to the terminal
+        console.log(result); // getting sneaker data to the terminal
 
         if (err) return console.log(err)
         res.render('profile.ejs', {
           sneakers: result,
           user: req.user
+        })
+      })
+  })
+
+  app.get('/community', isLoggedIn, function (req, res) {
+    let query = {username:req.user.local.name, username: { $exists: true, $ne: null }}//to takeout username ':' to see all sneakers
+    if ('brand' in req.query && req.query.brand !== 'None') {
+      query['brand'] = req.query.brand
+    }
+    db.collection('sneakerapp')
+      .find(query)
+      .toArray((err, result) => {
+        console.log(result); // getting sneaker data to the terminal
+
+        if (err) return console.log(err)
+        res.render('community.ejs', {
+          sneakers: result
         })
       })
   })
@@ -127,12 +144,13 @@ module.exports = function (app, passport, db, multer, ObjectId) {
     )
   })
 
-  app.post('/api/deletesneaker',  (req, res) => {
+  app.delete('/api/deletesneaker',  (req, res) => {
+    console.log(req.body)
     db.collection('sneakerapp').deleteOne(
       { username: req.user.local.name, name: req.body.name},
       (err, result) => {
         if (err) return console.log(err)
-        res.redirect('/profile')
+        res.send('good')
       }
     )
   })

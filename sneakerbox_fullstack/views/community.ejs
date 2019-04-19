@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Your description goes here">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnEaKer BoX</title>
+ 
+	<!-- <link rel="stylesheet" href="css/normalize.css" type="text/css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/community.css">
+</head>
+   
+
+		
+	
+<body>
+
+  
+  
+
+	<header id="main">
+      
+
+
+      <nav>
+          <ul>
+              <!-- <li><a href="#"><img src="" alt=""></a></li> -->
+              <li><a href="#">Login</a></li>
+              <li><a href="/community">Sneaker Collections</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Search</a></li>
+
+          </ul>
+      </nav>
+  </header>
+
+
+
+  <section class = "mainWrapper">
+  <h1>Users Collections</h1>
+
+<div>
+  <ul>
+    <% for(var i=0; i<sneakers.length; i++) { %>
+    <li>
+      <img src="images/sneakerimg/<%= sneakers[i].image %>" />
+      <span><%=sneakers[i].name%></span>
+      <span><%=sneakers[i].retail_price%></span>
+
+    </li>
+    
+    <% } %>
+  </ul>
+</div>
+
+</section>
+
+
+
+
+
+<script src="/js/main.js"></script>
+
+  
+</body>
+
+</html>

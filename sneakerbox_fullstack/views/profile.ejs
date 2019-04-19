@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-  crossorigin="anonymous"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
    
 
@@ -21,10 +21,22 @@
 	
 <body>
 
-  <header class="proHeader">
-    <h1>SnEaker BoX</h1>
-    <h3 class="promainH3">+ Sneaker </h3>
-  </header>
+    <header id="main">
+        <!-- <h1>Fixed Nav Bar Demo</h1> -->
+
+
+        <nav>
+            <ul>
+                <!-- <li><a href="#"><img src="" alt=""></a></li> -->
+                <li><a href="#">Login</a></li>
+                <li><a href="">Sneaker Collections</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Search</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
 
 
   <section class="usersBox">
@@ -36,8 +48,13 @@
         <input id="userId" hidden type="text" name="_id" value="<%= user._id %>">
       </div>
       <input id="avatarSubmit" type="submit">
+      <h3>Collection $Worth: $383</h3>
+      <h4># Pairs: 2</h4>
+      <h4>CONDO: Deadstock</h4>
+      
+
       </form>
-    </section>
+   
 
 	<div class="userInputBtn">
     <select id="brandselect">
@@ -49,7 +66,7 @@
       <option>Rebook</option>
       <option>Converse</option>
     </select>
-    <input type="submit" id="userInput" value="apply" aria-label="Check dates">
+    <input type="submit" id="userInput" value="search" aria-label="Check dates">
   </div>
   
 
@@ -57,263 +74,20 @@
   <ul>
     <% for(var i=0; i<sneakers.length; i++) { %>
     <li>
-      <form action="/api/deletesneaker" method="POST">
       <img src="images/sneakerimg/<%= sneakers[i].image %>" />
       <span><%=sneakers[i].name%></span>
       <span><%=sneakers[i].retail_price%></span>
-      <input type="submit" class="deleteSneaker" value="delete" placeholder="search">
-      <input type="hidden" name="name" value="<%=sneakers[i].name%>">
+      <input id="delete" type="submit" class="deleteSneaker" value="<%= sneakers[i].name %>">
 
-    </form>
     </li>
     
     <% } %>
   </ul>
 </div>
-
-
-<!-- user profile collection stage total $ amount displayed on the outside of card  -->
-<!-- 
-<div class="grid-container">
-  
- <!--  ROW 1  --> 
-  
- <div class="max-width-container">
-  <div class="item-container" data-show="false" data-category="bob" data-start="20190103" data-max="20190217" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-   <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
+</section>
 
 
 
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 1</h2>
-                    <h2>bob</h2>
-                    <h3>Content 1 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" data-category="bob" data-start="20190103" data-max="20191117" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-   <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 2</h2>
-                     <h2>bob</h2>
-                    <h3>Content 2 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" tabindex="0"  data-category="dog">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-      <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Username</h2>
-                    <h2>retail price</h2>
-                    <h3># Pairs</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-   <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 4</h2>
-                    <h3>Content 4 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  
-<!--  ROW 2  -->
-  
-   <div class="item-container" data-show="false" tabindex="0">
-    <a href="#" class="grid-item"></a>
-     <div class="arrow-up hide"></div>
-     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-      <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 5</h2>
-                    <h3>Content 5 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span id ="close-btn" class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-      <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 6</h2>
-                    <h3>Content 6 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-      <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 7</h2>
-                    <h3>Content 7 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-  <div class="item-container" data-show="false" tabindex="0">
-    <a href="#" class="grid-item"></a>
-    <div class="arrow-up hide"></div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/978186/plus-icon.svg" alt="" class="expand-icon"/>
-  </div>
-   <div class="dropdown-content hideContent">
-      <div class="dropdown-content-flex-container">
-          <!--     carousel     -->
-
-                  <div class="bg-image dropdown-content-flex-container__child"></div>
-
-          <!--     carousel -- END   -->
-
-
-
-          <!--     text content     -->
-
-                  <div class="text-content dropdown-content-flex-container__child">
-                    <h2>Content 8</h2>
-                    <h3>Content 8 sub heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit quibusdam saepe dolores velit beatae corporis voluptate ipsa vero volupta.</p>
-                  </div>
-
-          <!--     text content -- END   -->
-        
-     </div>
-     <span class="close-btn" tabindex="0">X</span>
-   </div>
-        
-  </div>
-</div>
-</div>
-  
 </div> 
 <script src="/js/main.js"></script>
 

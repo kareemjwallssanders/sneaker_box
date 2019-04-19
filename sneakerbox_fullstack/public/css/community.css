@@ -1,0 +1,46 @@
+body{
+  background-color: white;
+}
+.mainWrapper{
+  margin-top:200px;
+}
+
+/* navigation section */
+  
+nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: white;
+  }
+  
+  nav ul{
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  nav ul li{
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    height: 2%;
+  }
+  
+  nav ul li a{
+    text-decoration: none;
+    color: #222;
+    padding: 20px;
+  }
+  
+  /* an underline appears at the bottom on hover of each link */
+  nav ul li a:hover, nav ul li a:active{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+  }
+
+  h1{
+    color:black;
+    text-align: center;
+  }

@@ -1,76 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>restaurants rating</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/login.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-6 col-sm-offset-3">
+        <header id="main">
+          <!-- <h1>Fixed Nav Bar Demo</h1> -->
 
+          <nav>
+            <ul>
+              <!-- <li><a href="#"><img src="" alt=""></a></li> -->
+              <li><a href="#">Login</a></li>
+              <li><a href="8080/community">Sneaker Collections</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/api/search">Search</a></li>
+            </ul>
+          </nav>
+        </header>
 
+        <div id="pagewrap">
+          <section class="loginImgsec">
+            <section class="loginSec">
+              <% if (message.length > 0) { %>
+              <div class="alert alert-danger"><%= message %></div>
+              <% } %>
 
+              <!-- LOGIN FORM -->
+              <form action="/login" method="post">
+                <div class="form-group">
+                  <!-- <label>Name</label> -->
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <!-- <label>Password</label> -->
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="password"
+                  />
+                </div>
 
+                <button
+                  class="loginBtn"
+                  type="submit"
+                  class="btn btn-warning btn-lg"
+                >
+                  Login
+                </button>
+              </form>
 
-            <div id="pagewrap">
+              <!-- <hr> -->
 
-                <header id="main">
-                    <!-- <h1>Fixed Nav Bar Demo</h1> -->
-
-
-                    <nav>
-                        <ul>
-                            <!-- <li><a href="#"><img src="" alt=""></a></li> -->
-                            <li><a href="#">About</a></li>
-                            <li><a href="/profile">Sneaker Collections</a></li>
-                            <li><a href="/">home</a></li>
-                        </ul>
-                    </nav>
-                </header>
-
-
-                <section class = "loginSec">
-                    <% if (message.length > 0) { %>
-                    <div class="alert alert-danger"><%= message %></div>
-                    <% } %>
-
-                    <!-- LOGIN FORM -->
-                    <form action="/login" method="post">
-                        <div class="form-group">
-                            <!-- <label>Name</label> -->
-                            <input type="text" class="form-control" name="name" placeholder="name">
-                        </div>
-                        <div class="form-group">
-                            <!-- <label>Password</label> -->
-                            <input type="password" class="form-control" name="password" placeholder="password">
-                        </div>
-
-                        <button class="loginBtn" type="submit" class="btn btn-warning btn-lg">Login</button>
-                    </form>
-
-                    <!-- <hr> -->
-
-                    <p></p><a href="/signup">Create Accout +</a>
-                    <p><a href="/login">login</a></p>
-
-                    
-            </div>
+              <p></p>
+              <a href="/signup">Create Accout +</a>
+              <p><a href="/login">login</a></p>
+            </section>
+          </section>
         </div>
-
-        <section class ="loginImgsec">
-
-        </section>
-        </section>
-
-        
-
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>

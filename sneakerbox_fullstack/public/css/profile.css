@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-size: 22px;
 }
 
 body,
@@ -7,6 +8,43 @@ html{
     font-family: sans-serif;
   height: 100%;
   background: #e5e5e5;
+}
+/* navigation section */
+.mainheader{
+  margin-top: 20px;
+}
+  
+nav{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+}
+
+nav ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li{
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  height: 2%;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #222;
+  padding: 20px;
+}
+
+/* an underline appears at the bottom on hover of each link */
+nav ul li a:hover, nav ul li a:active{
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
 }
 
 
@@ -20,23 +58,21 @@ h1{
 
 }
 
-img{
+/* img{
     height:100px;
     width:100px;
-}
+} */
 
-.userBox{
+/* .userBox{
     border: 2px solid black;
-}
+    height: 400px;
+    width: 100%;
+} */
 
 
 
 
-.grid-container {
-  max-width: 1260px;
-  position: relative;
-  margin: 0 auto;
-}
+
 
 .max-width-container {
   display: flex;
@@ -44,7 +80,7 @@ img{
   width: 100%;
   margin: 0 auto;
   justify-content: center;
-  border: 4px solid orange;
+  /* border: 4px solid orange; */
 }
 
 .item-container {
@@ -56,9 +92,9 @@ img{
   background-position: center;
   background-size: cover;
   flex: 1 307px;
-   &:hover {
+   {&:hover {
     cursor: pointer;
-  }
+  } 
   @media screen and (max-width: 570px) {
     width: 100%;
     margin: 0 0 20px 0;
@@ -80,6 +116,7 @@ img{
   align-items: center;
   overflow: hidden;
   transition: height 1.5s ease;
+}
   h1 {
     font-size: 3rem;
   }
@@ -162,6 +199,7 @@ img{
 
 
 
+
 // tabbed styles
 
 .tab-container {
@@ -201,40 +239,14 @@ img{
 // tabbed styles end
 
 
-// datepicker styles
-
-.datepicker {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 2rem;
-}
-
-.datepicker input {
-    max-width: 100px;
-    border: 2px solid #0095d7;
-    border-radius: 30px;
-    margin: 0 1rem;
-    text-align: center;
-}
-
-.datepicker .apply-cta {
-    margin-right: 0;
-    margin-top: 0;
-    padding: 10px 25px;
-    border: none;
-}
-
-.ui-datepicker {
-    z-index: 50 !important;
-}
 
 
 
-.datepicker-input {
-    padding: 7px 10px;
-}
+
+
+
+
+
 
 .apply-cta{
     background-color: #0095d7;
@@ -265,5 +277,10 @@ img{
 
 .hide {
   display: none;
+}
+
+.avatar {
+  width: auto;
+  height: 50px;
 }
 
