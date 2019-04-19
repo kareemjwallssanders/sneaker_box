@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/api/search" method="POST">
+        <input type="text" name="query">
+        <input type="submit" value ="search">
+
+    </form>
+    <form action="/api/sneakersave" method="POST">
+
+
+    
+
+    <ul>
+    <% 
+    if (sneakers){
+        for (let i = 0; i < sneakers.hits.length; i++){
+          %> 
+        <li>
+            <img src="<%= sneakers.hits[i].media.thumbUrl%>" alt="">
+            <%= sneakers.hits[i].name %></li><input type="checkbox" name="save">
+        <input type="hidden" name="stockxCode" value="<%= sneakers.hits[i].url%>">
+        <input type="hidden" name="name" value="<%= sneakers.hits[i].name%>">
+        <input type="hidden" name="gender" value="<%= sneakers.hits[i].gender%>">
+        <input type="hidden" name="highest_bid" value="<%= sneakers.hits[i].highest_bid%>">
+        <input type="hidden" name="lowest_ask" value="<%= sneakers.hits[i].lowest_ask%>">
+        <input type="hidden" name="retail_price" value="<%= sneakers.hits[i].highest_bid%>">
+        <input type="hidden" name="last_sold" value="<%= sneakers.hits[i].last_sold%>">
+
+
+       <% }
+    }
+     %>
+    </ul>
+
+    <input type="submit" value="save">
+</form>
+</body>
+</html>

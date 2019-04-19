@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="Your description goes here">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SnEaKer BoX</title>
-  <link rel="stylesheet" href="css/profile.css">
-  <link rel="stylesheet" >
+  <link rel="stylesheet" href="css/profile.css" type="text/css">
+	<!-- <link rel="stylesheet" href="css/normalize.css" type="text/css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
 </head>
-     <meta charset="utf-8">
-    	<!-- <meta name="description" content="Your description goes here"> -->
-    	<!-- <meta name="keywords" content="one, two, three"> -->
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+   
 
-		<title>SnEaKer BoX</title>
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-</head>
+		
+	
 <body>
 
   <header class="proHeader">
@@ -58,15 +57,22 @@
   <ul>
     <% for(var i=0; i<sneakers.length; i++) { %>
     <li>
+      <form action="/api/deletesneaker" method="POST">
       <img src="images/sneakerimg/<%= sneakers[i].image %>" />
       <span><%=sneakers[i].name%></span>
       <span><%=sneakers[i].retail_price%></span>
-      <input type="submit" id="addsneaker" placeholder="+ collection">
+      <input type="submit" class="deleteSneaker" value="delete" placeholder="search">
+      <input type="hidden" name="name" value="<%=sneakers[i].name%>">
+
+    </form>
     </li>
+    
     <% } %>
   </ul>
 </div>
 
+
+<!-- user profile collection stage total $ amount displayed on the outside of card  -->
 <!-- 
 <div class="grid-container">
   
@@ -217,7 +223,7 @@
           <!--     text content -- END   -->
         
      </div>
-     <span class="close-btn" tabindex="0">X</span>
+     <span id ="close-btn" class="close-btn" tabindex="0">X</span>
    </div>
   <div class="item-container" data-show="false" tabindex="0">
     <a href="#" class="grid-item"></a>
@@ -308,18 +314,8 @@
 </div>
 </div>
   
-</div> -->
-
-
-
-
-
-
-
-
-
- 
-  <script src="/js/main.js"></script>
+</div> 
+<script src="/js/main.js"></script>
 
   
 </body>
